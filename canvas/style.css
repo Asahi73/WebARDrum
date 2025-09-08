@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+}
+  
+#camera, #overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(-1); /* 左右反転 */
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* 楽譜選択 */
+#score-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(30, 30, 30, 0.85);
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 6px;
+    z-index: 9999;
+}
+  
+#score-selector select,
+#score-selector button {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+#loadPatternBtn {
+    color: white;
+    background: #444;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#loadPatternBtn:hover {
+    background-color: #666;
+}
+
+/* BPMスライダー */
+#tempo-control {
+    position: absolute;
+    top: 20px;
+    right: 300px;
+    background-color: rgba(30, 30, 30, 0.85);
+    padding: 13px 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    color: white;
+    z-index: 9999;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+  
+#tempo-control input[type="range"] {
+    width: 150px;
+    margin-top: 4px;
+}
+
+/* 演奏開始ボタン */
+#startBtn {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    padding: 12px 20px;
+    background-color: #2196F3; /* 青系 */
+    color: white;
+    font-size: 16px;
+    /*font-weight: bold;*/
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease;
+    z-index: 9999;
+}
+  
+#startBtn:hover {
+    background-color: #1976D2;
+}
+
+/* メトロノーム停止ボタン */
+#metronomeBtn {
+    position: absolute;
+    top: 140px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #444; 
+    color: white;
+    font-size: 16px;
+    /*font-weight: bold;*/
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease;
+    z-index: 9999;
+}
+
+#metronomeBtn:hover {
+    background-color: #666;
+}

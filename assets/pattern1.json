@@ -1,0 +1,9 @@
+{
+  "subdivision": 4,
+  "pattern": [
+    { "step": 1, "note": 36 },
+    { "step": 3, "note": 42 },
+    { "step": 5, "note": 38 },
+    { "step": 7, "note": 42 }
+  ]
+}

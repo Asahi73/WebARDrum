@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>CameraTag</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../shared/sidebar.css" />
+</head>
+<body>
+    <video id="camera" autoplay playsinline></video>
+    <canvas id="overlay"></canvas>
+
+    <div id="score-selector">
+        <label for="patternSelect">楽譜を選択：</label>
+        <select id="patternSelect">
+            <option value="../assets/pattern1.json">基本パターン</option>
+            <option value="../assets/pattern2.json">8ビート</option>
+            <option value="../assets/pattern3.json">スネア練習</option>
+        </select>
+        <button id="loadPatternBtn">決定</button>
+    </div>
+
+    <div id="tempo-control">
+        <label for="tempoSlider">Tempo: <span id="tempoValue">120</span> BPM</label>
+        <input type="range" id="tempoSlider" min="80" max="180" value="120" step="1">
+    </div>
+
+    <button id="startBtn" onclick="startPlayback()">演奏開始</button>
+    <button id="metronomeBtn" onclick="stopMetronome()">メトロノーム停止</button>
+
+    <script src="script2.js"></script>
+    <script src="../shared/sidebar.js"></script>
+</body>
+</html>
