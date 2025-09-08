@@ -1,9 +1,99 @@
 {
   "subdivision": 4,
   "pattern": [
-    { "step": 1, "note": 36 },
-    { "step": 3, "note": 42 },
-    { "step": 5, "note": 38 },
-    { "step": 7, "note": 42 }
+    { "step": 17, "note": 36 },
+    { "step": 21, "note": 37 },
+    { "step": 27, "note": 36 },
+    { "step": 29, "note": 37 },
+
+    { "step": 17, "note": 36 },
+    { "step": 21, "note": 37 },
+    { "step": 27, "note": 36 },
+    { "step": 29, "note": 37 },
+
+    { "step": 33, "note": 36 },
+    { "step": 37, "note": 37 },
+    { "step": 43, "note": 36 },
+    { "step": 45, "note": 37 },
+
+    { "step": 49, "note": 36 },
+    { "step": 53, "note": 37 },
+    { "step": 59, "note": 36 },
+    { "step": 61, "note": 37 },
+
+    { "step": 65, "note": 36 },
+    { "step": 69, "note": 37 },
+    { "step": 75, "note": 36 },
+    { "step": 77, "note": 37 },
+
+    { "step": 81, "note": 36 },
+    { "step": 85, "note": 37 },
+    { "step": 91, "note": 36 },
+    { "step": 93, "note": 37 },
+
+    { "step": 97, "note": 36 },
+    { "step": 101, "note": 37 },
+    { "step": 107, "note": 36 },
+    { "step": 109, "note": 37 },
+
+    { "step": 113, "note": 36 },
+    { "step": 117, "note": 37 },
+    { "step": 123, "note": 36 },
+    { "step": 125, "note": 37 },
+
+    { "step": 129, "note": 36 },
+    { "step": 133, "note": 37 },
+    { "step": 139, "note": 36 },
+    { "step": 141, "note": 37 },
+
+    { "step": 145, "note": 36 },
+    { "step": 149, "note": 37 },
+    { "step": 155, "note": 36 },
+    { "step": 157, "note": 37 },
+
+    { "step": 161, "note": 36 },
+    { "step": 165, "note": 37 },
+    { "step": 171, "note": 36 },
+    { "step": 173, "note": 37 },
+
+    { "step": 177, "note": 36 },
+    { "step": 181, "note": 37 },
+    { "step": 187, "note": 36 },
+    { "step": 189, "note": 37 },
+
+    { "step": 193, "note": 36 },
+    { "step": 197, "note": 37 },
+    { "step": 203, "note": 36 },
+    { "step": 205, "note": 37 },
+
+    { "step": 209, "note": 36 },
+    { "step": 213, "note": 37 },
+    { "step": 219, "note": 36 },
+    { "step": 221, "note": 37 },
+
+    { "step": 225, "note": 36 },
+    { "step": 229, "note": 37 },
+    { "step": 235, "note": 36 },
+    { "step": 237, "note": 37 },
+
+    { "step": 241, "note": 36 },
+    { "step": 245, "note": 37 },
+    { "step": 251, "note": 36 },
+    { "step": 253, "note": 37 },
+
+    { "step": 257, "note": 36 },
+    { "step": 261, "note": 37 },
+    { "step": 267, "note": 36 },
+    { "step": 269, "note": 37 },
+
+    { "step": 273, "note": 36 },
+    { "step": 277, "note": 37 },
+    { "step": 283, "note": 36 },
+    { "step": 285, "note": 37 },
+
+    { "step": 289, "note": 36 },
+    { "step": 293, "note": 37 },
+    { "step": 299, "note": 36 },
+    { "step": 301, "note": 37 }
   ]
 }

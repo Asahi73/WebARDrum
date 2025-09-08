@@ -16,20 +16,24 @@ const instructionColors = {
   hihat: "rgba(0, 0, 255, 1)"
 };
 const flashColors = {
-  36: { color: "red", flashing: false, flashEnd: 0 },   // Kick
-  37: { color: "rgb(226, 255, 226)", flashing: false, flashEnd: 0 },  // Snare
-  42: { color: "blue", flashing: false, flashEnd: 0 }  // Hihat
+  36: { color: "rgb(255, 158, 158)", flashing: false, flashEnd: 0, maxRadius: 0 },   // Kick
+  37: { color: "rgb(170, 253, 170)", flashing: false, flashEnd: 0, maxRadius: 0 },  // Snare
+  42: { color: "rgb(133, 156, 249)", flashing: false, flashEnd: 0, maxRadius: 0 }  // Hihat
 };
 
-const markerPositions = JSON.parse(localStorage.getItem('markerPositions')) || {};
-/*
+markerPositions = JSON.parse(localStorage.getItem('markerPositions'));
+// null や空オブジェクトならデフォルトを使う
+if (!markerPositions || Object.keys(markerPositions).length === 0) {
+  markerPositions = {
+    kick:   { x: -0.7, y: 0.2, z: 0 },
+    snare:  { x:  0,   y: 0.2, z: 0 },
+    hihat:  { x:  0.7, y: 0.2, z: 0 }
+  };
+}
+
+console.log(markerPositions);
+
 // 仮座標（本番ではlocalStorageから取得）
-const markerPositions = {
-  kick:   { x: -0.7, y: 0.2, z: 0 },
-  snare:  { x:  0, y: 0.2, z: 0 },
-  hihat:  { x:  0.7, y: 0.2, z: 0 }
-};
-*/
 
 const midiToName = {
   36: "kick",
@@ -130,9 +134,9 @@ function drawTargetRings() {
   Object.entries(markerPositions).forEach(([id, pos3D]) => {
     const pos2D = projectPosition(pos3D);
     ctx.beginPath();
-    ctx.arc(pos2D.x, pos2D.y, 20, 0, Math.PI * 2);
+    ctx.arc(pos2D.x, pos2D.y, 30, 0, Math.PI * 2);
     ctx.strokeStyle = targetColors[id]; // 薄い色
-    ctx.lineWidth = 25;
+    ctx.lineWidth = 30;
     ctx.stroke();
   });
 }
@@ -178,7 +182,7 @@ function drawFlashRings() {
 
     if (now < state.flashEnd) {
       ctx.beginPath();
-      ctx.arc(screen.x, screen.y, 80, 0, Math.PI * 2);
+      ctx.arc(screen.x, screen.y, state.maxRadius, 0, Math.PI * 2);
       ctx.strokeStyle = state.color;
       ctx.globalAlpha = (state.flashEnd - now) / 0.2; // フェードアウト
       ctx.lineWidth = 4;
@@ -257,9 +261,9 @@ function stopMetronome() {
 
 // 判定猶予（sec）
 const JUDGE_WINDOW = 0.12;    // good範囲
-const PERFECT_WINDOW = 0.03;  // excellent範囲
-const CLOSE_THRESHOLD = 0.03; // 過去イベント優先範囲
-const HIT_OFFSET = 0.1;       // 処理によるヒットタイミングのズレを補正
+const PERFECT_WINDOW = 0.025;  // excellent範囲
+const CLOSE_THRESHOLD = 0.025; // 過去イベント優先範囲
+const HIT_OFFSET = 0.125;       // 処理によるヒットタイミングのズレを補正
 
 // MIDI入力が来た時の判定処理
 function judge(note) {
@@ -315,9 +319,11 @@ function flashRing(note, result) {
   const state = flashColors[note];
   if (!state) return;
 
-  const duration = result === "PERFECT" ? 0.4 : 0.12; // sec
+  const duration = result === "PERFECT" ? 0.2 : 0.1; // 出現時間(sec)
+  const radius = result === "PERFECT" ? 150: 100       // 最大半径
   state.flashing = true;
   state.flashEnd = audioContext.currentTime + duration;
+  state.maxRadius = radius;
 }
 
 // sidebar.jsとの連携
@@ -343,6 +349,6 @@ function startPlayback() {
 ////////////////////////////////////////////////////////////////////////////////////////////
 window.addEventListener('DOMContentLoaded', async () => {
   await loadMetronomeSounds();
-  await loadPattern('../assets/pattern3.json');
+  await loadPattern('../assets/pattern1.json');
   requestAnimationFrame(drawLoop);
 });
