@@ -3,7 +3,8 @@
 このプロジェクトは、ARマーカーを用いてドラムパーツの位置を取得し、  
 Canvas上に演奏ガイドリングを表示してリズム練習を行えるWebアプリケーションです。
 
-A Web AR Application to Practice Drums として NBiS 2024 にて発表
+旧版を A Web AR Application to Practice Drums として NBiS 2024 にて発表。
+当システムは、コードを全て刷新し、新機能と新UIを織り込んだものとなります。
 
 ---
 
