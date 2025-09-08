@@ -37,7 +37,7 @@
 ## 必要機材等
 - PC（Chrome想定）
 - Webカメラ
-- ARマーカ
+- ARマーカ（`/markers`のpngを印刷）
 - MIDIデバイス（電子ドラム想定）
 
 ---
