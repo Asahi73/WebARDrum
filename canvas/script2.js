@@ -21,13 +21,15 @@ const flashColors = {
   42: { color: "blue", flashing: false, flashEnd: 0 }  // Hihat
 };
 
-// const markerPositions = JSON.parse(localStorage.getItem('markerPositions')) || {};
+const markerPositions = JSON.parse(localStorage.getItem('markerPositions')) || {};
+/*
 // 仮座標（本番ではlocalStorageから取得）
 const markerPositions = {
   kick:   { x: -0.7, y: 0.2, z: 0 },
   snare:  { x:  0, y: 0.2, z: 0 },
   hihat:  { x:  0.7, y: 0.2, z: 0 }
 };
+*/
 
 const midiToName = {
   36: "kick",
@@ -256,7 +258,7 @@ function stopMetronome() {
 // 判定猶予（sec）
 const JUDGE_WINDOW = 0.12;    // good範囲
 const PERFECT_WINDOW = 0.03;  // excellent範囲
-const CLOSE_THRESHOLD = 0.02; // 過去イベント優先範囲
+const CLOSE_THRESHOLD = 0.03; // 過去イベント優先範囲
 const HIT_OFFSET = 0.1;       // 処理によるヒットタイミングのズレを補正
 
 // MIDI入力が来た時の判定処理
