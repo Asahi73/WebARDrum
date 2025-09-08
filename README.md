@@ -116,5 +116,5 @@ project-root/
 ## 参考
 
 このプロジェクトの設計・実装は以下の論文に基づく。
-- Asahi Onuki, "A Web AR Application to Practice Drums", NBiS, 2024  
-- Kaito Kikuchi, "An AR System to Practice Drums", NBiS, 2021
+- Asahi Onuki et al. , "A Web AR Application to Practice Drums", NBiS, 2024  
+- Kaito Kikuchi et al. , "An AR System to Practice Drums", NBiS, 2021
