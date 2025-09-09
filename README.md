@@ -51,7 +51,7 @@
 - システムは`A-Frame`を用いて各マーカー位置に薄いリング（ターゲットリング）を常時表示する。ユーザによる認識ボタン押下で座標が固定される。
 
 ### 2. 演奏ページ (`/canvas`)
-- 当ページではARの各種機能は用いず、`<Video>（getUserMedia()）`によるカメラ映像の出力、そこにCanvasによるリング表示を重ね合わせている。
+- 当ページではARの各種機能は用いず、`<video>（getUserMedia()）`によるカメラ映像の出力、そこにCanvasによるリング表示を重ね合わせている。
 - システムはカメラ映像を左右反転で表示する。
 - システムは`localStorage` に保存されたマーカー座標を2D座標へ変換してリングを表示する。
 - システムはJSON形式の譜面ファイルを読み込み、現在のBPMに合わせガイドの出現時刻を計算し記憶しておく。
@@ -95,7 +95,7 @@ project-root/
 │   ├── kick.patt
 │   ├── snare.patt
 │   └── hihat.patt
-└── assets/          # 譜面データ（JSON形式）
+└── assets/          # 譜面データ(JSON形式)
     ├── pattern1.json
     ├── pattern2.json
     └── pattern3.json
@@ -103,15 +103,15 @@ project-root/
 
 ---
 
-## 譜面ファイル仕様（例：pattern1.json）
+## 楽譜ファイル仕様
 
 ```json
 {
-  "subdivision": 4,         // 1拍を分割する数（例: 4 = 16分音符単位）
+  "subdivision": 4,         // 1拍を分割する数(4 = 16分音符単位)
   "pattern": [
-    { "step": 17,  "note": 36 }, // Kick
-    { "step": 21,  "note": 38 }, // Snare
-    { "step": 25,  "note": 36 }, // Kick
+    { "step": 17, "note": 36 }, // Kick
+    { "step": 21, "note": 38 }, // Snare
+    { "step": 25, "note": 36 }, // Kick
     { "step": 29, "note": 38 }  // Snare
   ]
 }
