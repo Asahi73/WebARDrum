@@ -2,8 +2,8 @@ let markerPositions = {}; // 座標保存用
 const markerIds = ['kick', 'snare', 'hihat'];
 const markerColors = {
   kick: 'red',
-  snare: 'blue',
-  hihat: 'green'
+  snare: 'green',
+  hihat: 'blue'
 };
 
 // Detectボタン：マーカを認識
@@ -22,7 +22,7 @@ document.getElementById('loadMarkers').addEventListener('click', () => {
       newRing.setAttribute('radius-inner', '0.3');
       newRing.setAttribute('radius-outer', '0.5');
       newRing.setAttribute('color', markerColors[id]);
-      newRing.setAttribute('opacity', '0.6');
+      newRing.setAttribute('opacity', '1.0');
       ringContainer.appendChild(newRing);
 
       markerPositions[id] = {

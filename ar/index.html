@@ -15,15 +15,15 @@
         <a-entity id="mirrored-rings" scale="-1 1 1">
             <!-- マーカ追従リング -->
             <a-marker id="kick" type="pattern" url="../markers/pattern-kick.patt">
-                <a-ring radius-inner="0.03" radius-outer="0.06" color="red" opacity="0.3" rotation="-90 0 0"></a-ring>
+                <a-ring radius-inner="0.3" radius-outer="0.6" color="red" opacity="0.3" rotation="-90 0 0"></a-ring>
             </a-marker>
 
-            <a-marker id="snare" type="pattern" url="../markers/snare.patt">
-                <a-ring radius-inner="0.3" radius-outer="0.5" color="blue" opacity="0.3" rotation="-90 0 0"></a-ring>
+            <a-marker id="snare" type="pattern" url="../markers/pattern-snare.patt">
+                <a-ring radius-inner="0.3" radius-outer="0.6" color="green" opacity="0.3" rotation="-90 0 0"></a-ring>
             </a-marker>
 
             <a-marker id="hihat" type="pattern" url="../markers/pattern-hihat.patt">
-                <a-ring radius-inner="0.03" radius-outer="0.06" color="green" opacity="0.3" rotation="-90 0 0"></a-ring>
+                <a-ring radius-inner="0.3" radius-outer="0.6" color="blue" opacity="0.3" rotation="-90 0 0"></a-ring>
             </a-marker>
 
             <!-- 認識済リング -->
@@ -32,8 +32,8 @@
     </a-scene>
 
     <div id="button">
-        <button id="loadMarkers">マーカー読込</button>
-        <button id="nextPage">次へ</button>
+        <button id="loadMarkers">マーカー読み込み</button>
+        <button id="nextPage">演奏する</button>
     </div>
 
     <script src="script.js"></script>

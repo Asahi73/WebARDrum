@@ -1,52 +1,65 @@
 <div id="sidebar">
-  <h3>Mixer</h3>
-
-  <div>
-    <h4>Kick</h4>
+  <section class="mixer-section">
+    <h4>BGM</h4>
     <div class="slider-row">
-      <label class="slider-label">Volume</label>
-      <input type="range" id="kick-volume" class="volume-slider" min="0" max="200" value="100">
+      <label class="slider-label">ボリューム</label>
+      <input type="range" id="bgm-volume" class="volume-slider" min="0" max="100" value="20">
+    </div>
+  </section>
+
+  <section class="mixer-section">
+    <h4>メトロノーム</h4>
+    <div class="slider-row">
+      <label class="slider-label">ボリューム</label>
+      <input type="range" id="metronome-volume" class="volume-slider" min="0" max="100" value="70">
+    </div>
+  </section>
+
+  <section class="mixer-section">
+    <h4>バスドラム</h4>
+    <div class="slider-row">
+      <label class="slider-label">ボリューム</label>
+      <input type="range" id="kick-volume" class="volume-slider" min="0" max="400" value="100">
     </div>
     <div class="slider-row">
-      <label class="slider-label">Pan</label>
+      <label class="slider-label">パン</label>
       <input type="range" id="kick-pan" class="pan-slider" min="-100" max="100" value="0">
     </div>
     <div class="slider-row">
-      <label class="slider-label">Reverb</label>
-      <input type="range" id="kick-reverb" class="reverb-slider" min="0" max="100" value="0">
+      <label class="slider-label">リバーブ</label>
+      <input type="range" id="kick-reverb" class="reverb-slider" min="0" max="30" value="0">
     </div>
-  </div>
+  </section>
 
-  <div>
-    <h4>Snare</h4>
+  <section class="mixer-section">
+    <h4>スネアドラム</h4>
     <div class="slider-row">
-      <label class="slider-label">Volume</label>
-      <input type="range" id="snare-volume" class="volume-slider" min="0" max="200" value="100">
+      <label class="slider-label">ボリューム</label>
+      <input type="range" id="snare-volume" class="volume-slider" min="0" max="400" value="100">
     </div>
     <div class="slider-row">
-      <label class="slider-label">Pan</label>
+      <label class="slider-label">パン</label>
       <input type="range" id="snare-pan" class="pan-slider" min="-100" max="100" value="0">
     </div>
     <div class="slider-row">
-      <label class="slider-label">Reverb</label>
-      <input type="range" id="snare-reverb" class="reverb-slider" min="0" max="100" value="0">
+      <label class="slider-label">リバーブ</label>
+      <input type="range" id="snare-reverb" class="reverb-slider" min="0" max="30" value="0">
     </div>
-  </div>
+  </section>
 
-  <div>
-    <h4>Hi-Hat</h4>
+  <section class="mixer-section">
+    <h4>ハイハット</h4>
     <div class="slider-row">
-      <label class="slider-label">Volume</label>
-      <input type="range" id="hihat-volume" class="volume-slider" min="0" max="200" value="100">
+      <label class="slider-label">ボリューム</label>
+      <input type="range" id="hihat-volume" class="volume-slider" min="0" max="400" value="100">
     </div>
     <div class="slider-row">
-      <label class="slider-label">Pan</label>
+      <label class="slider-label">パン</label>
       <input type="range" id="hihat-pan" class="pan-slider" min="-100" max="100" value="0">
     </div>
     <div class="slider-row">
-      <label class="slider-label">Reverb</label>
-      <input type="range" id="hihat-reverb" class="reverb-slider" min="0" max="50" value="0">
+      <label class="slider-label">リバーブ</label>
+      <input type="range" id="hihat-reverb" class="reverb-slider" min="0" max="30" value="0">
     </div>
-  </div>
+  </section>
 </div>
-<button id="sidebarToggle">☰</button>

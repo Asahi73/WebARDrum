@@ -1,0 +1,54 @@
+{
+  "subdivision": 4,
+  "bgm": "../inst/BGM/FunkLab.mp3",
+  "bgmStartOffset": 0.0,
+  "pattern": [
+    { "step": 21, "note": 37 },
+    { "step": 29, "note": 37 },
+
+    { "step": 37, "note": 37 },
+    { "step": 45, "note": 37 },
+
+    { "step": 53, "note": 37 },
+    { "step": 61, "note": 37 },
+
+    { "step": 69, "note": 37 },
+    { "step": 77, "note": 37 },
+
+    { "step": 85, "note": 37 },
+    { "step": 93, "note": 37 },
+
+    { "step": 101, "note": 37 },
+    { "step": 109, "note": 37 },
+
+    { "step": 117, "note": 37 },
+    { "step": 125, "note": 37 },
+
+    { "step": 133, "note": 37 },
+    { "step": 141, "note": 37 },
+
+    { "step": 149, "note": 37 },
+    { "step": 157, "note": 37 },
+
+    { "step": 165, "note": 37 },
+    { "step": 173, "note": 37 },
+
+    { "step": 181, "note": 37 },
+    { "step": 189, "note": 37 },
+
+    { "step": 197, "note": 37 },
+    { "step": 205, "note": 37 },
+
+    { "step": 213, "note": 37 },
+    { "step": 221, "note": 37 },
+
+    { "step": 229, "note": 37 },
+    { "step": 237, "note": 37 },
+
+    { "step": 245, "note": 37 },
+    { "step": 253, "note": 37 },
+
+    { "step": 261, "note": 37 },
+    { "step": 269, "note": 37 }
+  ]
+}

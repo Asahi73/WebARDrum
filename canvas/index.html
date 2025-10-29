@@ -10,23 +10,35 @@
     <video id="camera" autoplay playsinline></video>
     <canvas id="overlay"></canvas>
 
+    <button id="flipBtn" class="flip-toggle">上下反転</button>
+
     <div id="score-selector">
         <label for="patternSelect">楽譜を選択：</label>
         <select id="patternSelect">
-            <option value="../assets/pattern1.json">基本パターン</option>
-            <option value="../assets/pattern2.json">8ビート</option>
-            <option value="../assets/pattern3.json">スネア練習</option>
+            <option value="../assets/funk_easy.json">ファンクかんたん</option>
+            <option value="../assets/funk_normal.json">ファンクふつう</option>
+            <option value="../assets/funk_hard.json">ファンクむずかしい</option>
+            <option value="../assets/rock_easy.json">ロックかんたん</option>
+            <option value="../assets/rock_normal.json">ロックふつう</option>
+            <option value="../assets/rock_hard.json">ロックむずかしい</option>
+            <option value="../assets/disco_easy.json">ディスコかんたん</option>
+            <option value="../assets/disco_normal.json">ディスコふつう</option>
+            <option value="../assets/disco_hard.json">ディスコむずかしい</option>
         </select>
         <button id="loadPatternBtn">決定</button>
     </div>
 
     <div id="tempo-control">
-        <label for="tempoSlider">Tempo: <span id="tempoValue">120</span> BPM</label>
+        <label for="tempoSlider">テンポ：<span id="tempoValue">120</span> BPM</label>
         <input type="range" id="tempoSlider" min="80" max="180" value="120" step="1">
     </div>
 
-    <button id="startBtn" onclick="startPlayback()">演奏開始</button>
-    <button id="metronomeBtn" onclick="stopMetronome()">メトロノーム停止</button>
+    <button id="startBtn" onclick="startPlayback()" disabled>演奏開始</button>
+    <button id="stopBtn" onclick="stopMetronome()" disabled>演奏停止</button>
+
+    <button id="prevPage">戻る</button>
+
+    <button id="resetPos">座標デフォルト</button>
 
     <script src="script2.js"></script>
     <script src="../shared/sidebar.js"></script>

@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    overflow: hidden;
     font-family: sans-serif;
 }
 
@@ -14,10 +15,8 @@ video {
     right: 20px;
     z-index: 9999;
     font-family: sans-serif;
-    font-size: 14px;
-    padding: 10px 20px;
-    background-color: #444;
     color: white;
+    font-weight: bold;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -26,13 +25,23 @@ video {
 
 #loadMarkers {
     top: 20px;
+    padding: 20px 50px;
+    background-color: #e20000;
+    font-size: 20px;
 }
 
 #nextPage {
-    top: 70px;
+    top: 100px;
+    padding: 10px 30px;
+    background-color: rgb(53, 53, 53);
+    font-size: 15px;
 }
 
 /* ホバー時 */
-#nextPage:hover, #loadMarkers:hover {
-    background-color: #666;
+#loadMarkers:hover {
+    background-color: #b90202;
+}
+
+#nextPage:hover {
+    background-color: rgb(0, 0, 0)
 }
