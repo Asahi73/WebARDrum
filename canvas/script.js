@@ -125,6 +125,8 @@ async function loadPattern(jsonPath) {
   }));
 
   updatePatternTiming();
+
+  console.log(pattern);
 }
 
 document.getElementById('loadPatternBtn').addEventListener('click', async () => {
@@ -142,12 +144,13 @@ document.getElementById('loadPatternBtn').addEventListener('click', async () => 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 document.getElementById("tempoSlider").addEventListener("input", (e) => {
-  document.getElementById("tempoValue").textContent = e.target.value;
+  //document.getElementById("tempoValue").textContent = e.target.value;
   updatePatternTiming();
 });
 
 function getTempo() {
-  return parseInt(document.getElementById("tempoSlider").value, 10);
+  //return parseInt(document.getElementById("tempoSlider").value, 10);
+  return 120;
 }
 
 function updatePatternTiming() {
@@ -156,7 +159,6 @@ function updatePatternTiming() {
   pattern.forEach(event => {
     event.time = event.step * stepSec;
   });
-  console.log(pattern);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////

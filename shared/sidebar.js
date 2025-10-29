@@ -119,7 +119,7 @@ function setupSliders() {
     bgmVol.addEventListener('input', e => {
       const volume = e.target.value / 100; // 0-100を0-1に変換
       
-      // script2.jsから公開されたGainNodeを取得
+      // script.jsから公開されたGainNodeを取得
       if (window.bgmGainNode) {
         window.bgmGainNode.gain.value = volume;
       }
