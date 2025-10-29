@@ -3,16 +3,16 @@ const drumBuffers = {};
 const reverbBufferUrl = '../IR/st_georges_medium.wav';
 const audioContext = new AudioContext({ latencyHint: 'interactive' }); // デフォでインタラクティブ念の為
 const drums = {
-  kick: "inst/kick.mp3",
-  snare: "inst/snare.mp3",
-  hihat: "inst/hihat.mp3",
-  hihatOpen: "inst/hihatOpen.mp3",
-  hihatFoot: "inst/hihatFoot.mp3",
+  kick: "inst/Sunset/Kick.mp3",
+  snare: "inst/Sunset/Snare.mp3",
+  hihat: "inst/Sunset/Hihat.mp3",
+  hihatOpen: "inst/Sunset/HihatOpen.mp3",
+  hihatFoot: "inst/Sunset/HihatFoot.mp3",
 };
 const midiMap = {
   36: "kick",
   37: "snare",
-  42: "hihat",
+  38: "hihat",
   43: "hihatOpen", // 電ドラは0
   39: "hihatFoot", // 電ドラは44
 };
@@ -47,7 +47,7 @@ async function setupDrums() {
   }
 }
 
-function playDrum(name) {
+function playDrum(name, velocity = 100) {
   const buffer = drumBuffers[name];
   if(!buffer) return;
 
@@ -69,8 +69,13 @@ function playDrum(name) {
   }
 
   const nodes = isHihat ? drumNodes.hihat : drumNodes[name]; // ハイハット３種の加工は一括で管理
-  source.connect(nodes.dryGain);
-  source.connect(nodes.convolver);
+  
+  const velocityGain = audioContext.createGain();
+  velocityGain.gain.value = velocity / 300; // MIDIのベロシティを正規化
+
+  source.connect(velocityGain);
+  velocityGain.connect(nodes.dryGain);
+  velocityGain.connect(nodes.convolver);
   source.start();
 
   // 鳴っているハイハットを記録
@@ -90,7 +95,7 @@ function onMidiMessage(event) {
     // 発声処理
     console.log(event.data);
     const drum = midiMap[note];
-    if (drum) playDrum(drum);
+    if (drum) playDrum(drum, velocity);
 
     // 判定処理（canvas/script.jsとの連携）
     if (window.onMidiJudge) {
@@ -108,6 +113,44 @@ function setupMidi() {
 }
 
 function setupSliders() {
+  // BGMボリューム制御
+  const bgmVol = document.getElementById('bgm-volume');
+  if (bgmVol) {
+    bgmVol.addEventListener('input', e => {
+      const volume = e.target.value / 100; // 0-100を0-1に変換
+      
+      // script2.jsから公開されたGainNodeを取得
+      if (window.bgmGainNode) {
+        window.bgmGainNode.gain.value = volume;
+      }
+      
+      saveValue('bgm-volume', e.target.value);
+    });
+    
+    // 保存された値を読み込み
+    bgmVol.value = loadValue('bgm-volume', bgmVol.value);
+    bgmVol.dispatchEvent(new Event('input'));
+  }
+
+  // メトロノームボリューム制御
+  const metronomeVol = document.getElementById('metronome-volume');
+  if (metronomeVol) {
+    metronomeVol.addEventListener('input', e => {
+      const volume = e.target.value / 100; // 0-100を0-1に変換
+      
+      // script2.jsから公開されたGainNodeを取得
+      if (window.metronomeGainNode) {
+        window.metronomeGainNode.gain.value = volume;
+      }
+      
+      saveValue('metronome-volume', e.target.value);
+    });
+    
+    // 保存された値を読み込み
+    metronomeVol.value = loadValue('metronome-volume', metronomeVol.value);
+    metronomeVol.dispatchEvent(new Event('input'));
+  }
+
   Object.entries(drumNodes).forEach(([name, nodes]) => {
     if (name === "hihatOpen" || name === "hihatFoot") return; // オープンとフットのスライダーはないため除外
 
@@ -153,10 +196,6 @@ function loadValue(key, fallback) {
 async function initSidebar() {
   const html = await fetch('../shared/sidebar.html').then(res => res.text());
   document.body.insertAdjacentHTML('beforeend', html);
-
-  // トグル化
-  document.getElementById('sidebarToggle').onclick = () =>
-    document.getElementById('sidebar').classList.toggle('active');
 
   await setupDrums();
   setupMidi();

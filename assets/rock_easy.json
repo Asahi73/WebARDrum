@@ -1,0 +1,23 @@
+{
+  "subdivision": 4,
+  "bgm": "../inst/BGM/RockLab.mp3",
+  "bgmStartOffset": 0.0,
+  "pattern": [
+    { "step": 41,  "note": 37 },
+    { "step": 57,  "note": 37 },
+    { "step": 73,  "note": 37 },
+    { "step": 89,  "note": 37 },
+    { "step": 105, "note": 37 },
+    { "step": 121, "note": 37 },
+    { "step": 137, "note": 37 },
+    { "step": 153, "note": 37 },
+    { "step": 169, "note": 37 },
+    { "step": 185, "note": 37 },
+    { "step": 201, "note": 37 },
+    { "step": 217, "note": 37 },
+    { "step": 233, "note": 37 },
+    { "step": 249, "note": 37 },
+    { "step": 265, "note": 37 },
+    { "step": 281, "note": 37 }
+  ]
+}
