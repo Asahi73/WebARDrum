@@ -45,6 +45,8 @@ const midiToName = {
   38: "hihat",
   43: "hihatOpen", // 電ドラは0
   39: "hihatFoot", // 電ドラは44
+  40: "crash",
+  42: "ride"
 }
 const nameToMidi = {
   kick: 36,
@@ -52,6 +54,8 @@ const nameToMidi = {
   hihat: 38,
   hihatOpen: 43,
   hihatFoot: 39,
+  crash: 40,
+  ride: 42
 }
 
 let subdivision = 4;          // 一拍分割数

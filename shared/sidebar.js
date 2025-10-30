@@ -8,6 +8,8 @@ const drums = {
   hihat: "inst/Sunset/Hihat.mp3",
   hihatOpen: "inst/Sunset/HihatOpen.mp3",
   hihatFoot: "inst/Sunset/HihatFoot.mp3",
+  crash: "inst/Sunset/Crash.mp3",
+  ride: "inst/Sunset/Ride.mp3"
 };
 const midiMap = {
   36: "kick",
@@ -15,6 +17,8 @@ const midiMap = {
   38: "hihat",
   43: "hihatOpen", // 電ドラは0
   39: "hihatFoot", // 電ドラは44
+  40: "crash",
+  42: "ride",
 };
 let reverbBuffer = null;
 let activeHihatSource = null;
