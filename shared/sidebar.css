@@ -3,7 +3,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 300px;
+    width: 250px;
     height: 100vh;
     background-color: rgba(30, 30, 30, 0.95);
     color: white;
@@ -32,7 +32,7 @@
 /****************************** スライダー **********************************/
 /* スライダー共通 */
 input[type=range] {
-    width: 200px;
+    width: 150px;
     height: 8px;
     border-radius: 5px;
     background: #ddd;
