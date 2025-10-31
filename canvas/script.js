@@ -83,7 +83,7 @@ navigator.mediaDevices.getUserMedia({ video: true })
 
 const center = { x: canvasSize.width / 2, y: canvasSize.height / 2 };
 function projectPosition(pos3D) { // ３次元座標を２次元に変換
-  const scale = 75;
+  const scale = 75; // カメラ位置に応じて要変更
   const y = center.y - pos3D.y * scale - 50;
   return {
     x: center.x + pos3D.x * scale,
@@ -305,8 +305,8 @@ let metronomeGain = null; // メトロノーム音量制御用GainNode
 
 async function loadMetronomeSounds() {
   const [countRes, headRes] = await Promise.all([
-    fetch('../inst/count.mp3'),
-    fetch('../inst/countHead.mp3')
+    fetch('../inst/count/count.mp3'),
+    fetch('../inst/count/countHead.mp3')
   ]);
   countBuffer = await audioContext.decodeAudioData(await countRes.arrayBuffer());
   countHeadBuffer = await audioContext.decodeAudioData(await headRes.arrayBuffer());

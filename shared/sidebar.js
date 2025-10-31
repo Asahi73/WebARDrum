@@ -3,13 +3,13 @@ const drumBuffers = {};
 const reverbBufferUrl = '../IR/st_georges_medium.wav';
 const audioContext = new AudioContext({ latencyHint: 'interactive' }); // デフォでインタラクティブ念の為
 const drums = {
-  kick: "inst/Sunset/Kick.mp3",
-  snare: "inst/Sunset/Snare.mp3",
-  hihat: "inst/Sunset/Hihat.mp3",
-  hihatOpen: "inst/Sunset/HihatOpen.mp3",
-  hihatFoot: "inst/Sunset/HihatFoot.mp3",
-  crash: "inst/Sunset/Crash.mp3",
-  ride: "inst/Sunset/Ride.mp3"
+  kick: "inst/sunset/Kick.mp3",
+  snare: "inst/sunset/Snare.mp3",
+  hihat: "inst/sunset/Hihat.mp3",
+  hihatOpen: "inst/sunset/HihatOpen.mp3",
+  hihatFoot: "inst/sunset/HihatFoot.mp3",
+  crash: "inst/sunset/Crash.mp3",
+  ride: "inst/sunset/Ride.mp3"
 };
 const midiMap = {
   36: "kick",
